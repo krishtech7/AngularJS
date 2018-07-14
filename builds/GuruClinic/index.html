@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" ng-app='myApp'>
+<head >
+  <meta charset="UTF-8">
+  <title>Guru Clinic</title>
+  <!-- https://github.com/planetoftheweb/angularregistration/blob/02_04e/builds/angularregistration/js/services/authentication.js -->
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
+  <!-- inbuilt styles -->
+  <link rel="stylesheet" href="css/style.css"> 
+  <link rel=stylesheet type="text/css" href="css/style-guru.css">
+  <!-- aos -->
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">  
+   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <!--    font-->
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<!-- bootstrap -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- bootstrap  -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+
+
+<!-- bootstrap 4 --> 
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+  <!-- <script src"https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script> -->
+  <script src= "js/lib/angular/angular.min.js"></script>
+  <script src="js/lib/angular/angular-route.min.js"></script>
+  <script src= "js/lib/angular/angular-animate.min.js"></script>
+  
+  <!-- <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script> -->
+  <!-- Add additional services you want to use
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script> -->
+   
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBxjbxwUvdQL8pJdBPlEZzQ5s5v3GscPOo",
+      authDomain: "patientdata-9fa03.firebaseapp.com",
+      databaseURL: "https://patientdata-9fa03.firebaseio.com",
+      projectId: "patientdata-9fa03",
+      storageBucket: "patientdata-9fa03.appspot.com",
+      messagingSenderId: "657024768438"
+    };
+    firebase.initializeApp(config);
+  </script><script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+
+  
+  <!-- <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>  -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script> -->
+  
+  <script src= "js/app.js"></script>
+  <script src= "js/services/authentication.js"></script>
+  <script src= "js/controller/registration.js"></script>
+  <script src= "js/controller/controllers.js"></script>
+  <script src= "js/controller/patientInfo.js"></script>
+  <script src= "js/controller/checkIns.js"></script>
+  <script src="js/animation.js"></script>
+ 
+</head>
+<body>
+<header></header>
+   
+<nav class="cf navbar navbar-default" ng-include="'views/nav.html'"></nav>
+
+<div class = "userinfo" ng-show="currentUser" ng-controller="registrationController">
+  <span class="userinfo">Hi {{currentUser.firstname}}</span>
+  <span class="userinfo">Hi {{currentUser.uid}}</span>
+<a ng-href=#/login ng-click="logout()">logout</a>
+</div>
+<nav class="cf navbar " ng-show="currentUser" ng-include="'views/subnav.html'"></nav>
+<div class="page">
+  <main class="cf" ng-view> </main>
+</div>
+
+</body>
+</html>

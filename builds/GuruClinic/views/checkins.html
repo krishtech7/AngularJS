@@ -1,0 +1,41 @@
+<section class="card">
+        <form name="myform"
+        ng-submit="addcheckin()"
+        novalidate>
+      
+          <div class="textintro">
+            <h1>Consultation </h1>
+            <p>Add info regarding the meeting</p>
+            <p class="message" ng-show="message">{{message}}</p>
+              <p class="message" ng-show="currentUser">Patient Name: {{currentPatient.name}}</p>
+          </div>
+         
+              <div class="form-group">
+             
+              <input type="text" name="cName" placeholder="title" ng-model="user.cName" ng-required="true"> 
+              <input type="date" name="cDate" placeholder="Today's date" ng-model="user.cDate" ng-required="true"> 
+              <textarea name="comment" id="comment" cols="30" rows="10" class="form-control" ng-model="user.drnotes"></textarea>
+              </div> 
+      
+          <button type="submit" class="btn btn-primary" ng-disabled="myform.$invalid">AddMeeting</button>
+          
+        </form>
+        <br>
+        <div class="card meetings cf">
+            <h1> Consultation Lists</h1>
+            <div class="meeting" ng-repeat="checkin in checkinList">  
+                <button class="btn " name="button" ng-click= " "> 
+                  <span class="glyphicon glyphicon-trash"></span></span>
+                </button>
+                <a ng-href="#/checkins/{{currentUser.regUser}}/{{checkin.uid}}/checkinList">
+                  <button class="btn " name="button"><span class="glyphicon glyphicon-list-alt"></span>  </button> 
+                </a>
+                <h4>{{checkin.CName}}</h4>
+                <p>{{checkin.drNotes}}</p>
+                <div class="date">
+                    {{checkin.cDate | date: "MMM dd,yyyy"}}
+                </div>
+              </div>
+          </div>
+      </section>
+      

@@ -1,0 +1,62 @@
+
+  <div class="container mt-sm-3" >
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 card">
+              <div class="card-body form-group">
+                <h2 class="card-title text-dark">Patient Directory</h2>
+    
+                  <div class="form-group mb-2">
+                    <div class="col">
+                      <label class="col-form-label text-right" for="searchQuery">search<span ng-show="query">{{' for: '+ query}}</span> </label>
+                    </div><!-- label -->
+                    
+                    <div class="col-12 mb-2">
+                      <input class="form-control form-control-lg" id="searchQuery" placeholder="Search for patient" autofocus
+                      ng-model="query">
+                    </div><!-- col-12 -->
+                  </div><!-- form-row -->
+                  <div class="mb-3">
+                    <div class="form-group col">
+                      <select class="form-control form-control-inline mr-3 w-100" ng-model="artistOrder">
+                        <option value="name">In</option>
+                        <option value="reknown">Out</option>
+                      </select>
+                    </div><!-- col -->
+                    <div class="form-group col-5 md-4">
+                      <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="direction" checked ng-model="direction"> asc</label>
+                      </div><!-- form-check -->
+                      <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="direction" value="reverse" ng-model="direction"> desc</label>
+                      </div><!-- form-check -->
+                    </div><!-- col-5 -->
+                  </div><!-- form-row -->
+                  
+              </div><!-- card-body -->
+          </div><!-- col-12 -->
+        </div><!-- row -->
+    </div><!-- col-container -->
+    
+    <div class="artist-list container" ng-if="query">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-9 col-md-7 col-lg-5">
+          <ul class="list-group ">
+            <li class="list-group-item" ng-repeat="item in artists | filter:query |orderBy:artistOrder:direction" >
+               <a href="#/details{{artists.indexOf(item)}}"> 
+                 <div class="media d-flex align-items-center">
+                    <img class="rounded-circle mr-3"
+                    ng-src="images/{{item.lastname}}_tn.jpg"
+                    alt="Photo of {{item.firstname}}"> 
+                    <div class="media-body">
+                    <h5 class="my-0 text-dark">{{item.firstname}}</h5>
+                    <div class="text-secondary font-italic" >{{item.bio}}</div>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+            </a>
+            </li>
+          </ul>
+        </div><!-- col-12 -->
+      </div><!-- row -->
+    </div><!-- col-container -->

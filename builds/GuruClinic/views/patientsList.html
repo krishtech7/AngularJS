@@ -1,0 +1,40 @@
+
+<div class="card checkinslist" >
+<div class="search cf">
+    <h2>Search patient</h2>
+    <input type="text"ng-model='query' placeholder="search for users">
+</div>
+<div class="formgroup"><span class="label">By:</span>
+    <select ng-model="order">
+        <option value="firstname">First Name</option>
+        <option value="Lastname">Lastname</option>
+        <option value="Date">Date</option>
+    </select>
+</div>
+<div class="formgroup">
+    <input type="radio" 
+    id="descending" 
+    ng-model="direction" 
+    name="direction">
+    <label for="descending">des</label>&nbsp;
+    <input type="radio" 
+    id="ascending" 
+    ng-model="direction" 
+    name="direction" value="reverse">
+    <label for="ascending">asc</label>&nbsp;
+</div>
+    <ul>
+    <li ng-repeat="patient in patients | filter:query| orderBy: order:direction">
+        <a ng-href="#">
+        <div class="checkin">
+            <div class="info">
+                <h4>{{patient.name | lowercase}}</h4>
+                <div class="date" >
+                    {{patient.dob | date: "MMM d,yy"}}
+                </div>
+            </div>
+        </div>
+    </a>
+    </li>
+    </ul>
+</div>
